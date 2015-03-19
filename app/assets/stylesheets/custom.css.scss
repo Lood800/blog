@@ -33,6 +33,7 @@ footer {
     color: $gray;
     &:hover {
       color: $gray-darker;
+      background-color: white;
     }
   }
   small {
@@ -62,6 +63,14 @@ h1 {
 }
 
 h2 {
+  font-size: 300%;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
+h3 {
   font-size: 1.8em;
   letter-spacing: -1px;
   margin-bottom: 30px;
@@ -70,10 +79,18 @@ h2 {
   color: #777;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+h5 {
+  font-size: 150%;
+  letter-spacing: -1px;
+  text-align: left;
+  font-weight: normal;
+  width: 800px;
+  margin: 0px auto 15px auto;
+  line-height: 120%;
+  text-align: justify;
 }
+
+
 
 /* universal */
 
@@ -95,4 +112,35 @@ textarea {
 
 .center h1 {
   margin-bottom: 10px;
+}
+
+#error_h2 {
+  font-size: 150%;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  margin-top: 0;
+  text-align: left;
+  font-weight: normal;
+}
+
+p {
+  font-size: 150%;
+  letter-spacing: 0.5px;
+  text-align: left;
+  font-weight: normal;
+  width: 800px;
+  margin: 0px auto 15px auto;
+  line-height: 120%;
+  text-align: justify;
+}
+
+.post_show p {
+  font-size: 100%;
+  letter-spacing: 0.5px;
+  text-align: left;
+  font-weight: normal;
+  width: 800px;
+  margin: 0px auto 15px auto;
+  line-height: 120%;
+  text-align: justify;
 }

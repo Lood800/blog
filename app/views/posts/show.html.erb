@@ -1,0 +1,12 @@
+
+<% provide(:title, "Post") %>
+
+<div class="center jumbotron">
+	<h2><%= @post.heading %></h2>
+	<h3><%= @post.sub_heading %></h3>
+	<h5><%= simple_format(@post.body, :sanitize => false) %></h5>
+	<%= link_to "Click here to comment", "posts/#{@post.id}/", class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Show All', posts_path %>
