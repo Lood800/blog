@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
-  	@posts = Post.all[0..4]
+  	@posts_recent_five = Post.last(5).reverse
+  	@posts_recent_ten = Post.last(10).reverse
+  	@posts = Post.all
   end
 
   def about

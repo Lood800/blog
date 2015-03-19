@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<aside id="sidebar">
+	<h4>Recent Posts</h4>
+		<ul class="list-unstyled">
+		<% @posts_recent_ten.each do |post| %>
+			<li>
+				<%= link_to "#{post.heading}", "posts/#{post.id}/" %>
+			</li>
+		<% end %>
+		<br/>
+		<% if @posts.length > 10 %>
+			<div class="hidden_side_show">
+				<%= link_to 'Show All', posts_path %>
+			</div> 
+		<% end %>
+</aside>
