@@ -58,6 +58,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:heading, :sub_heading, :body)
+      params.require(:post).permit(:heading, :sub_heading, :body, :bootsy_image_gallery_id)
     end
 end
