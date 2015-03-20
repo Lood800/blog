@@ -6,13 +6,17 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @images = @post.images
   end
 
   def new
     @post = Post.new
+    @image = Image.new
   end
 
   def edit
+    @image = Post.find(params[:id])
   end
 
   def create
