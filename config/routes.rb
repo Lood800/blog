@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   resources :posts
 
   root 'static_pages#home'
