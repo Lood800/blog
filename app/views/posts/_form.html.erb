@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.bootsy_area :body, rows: 15, cols: 150, editor_options: { image: false } %>
+    <%= f.text_area :body, rows: 15, cols: 150 %>
   </div>
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-default' %>
