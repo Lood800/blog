@@ -7,16 +7,14 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @images = @post.images
   end
 
   def new
     @post = Post.new
-    @image = Image.new
   end
 
   def edit
-    @image = Post.find(params[:id])
+
   end
 
   def create
@@ -56,11 +54,22 @@ class PostsController < ApplicationController
   end
 
   private
-    def set_post
-      @post = Post.find(params[:id])
-    end
+    
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    def post_params
-      params.require(:post).permit(:heading, :sub_heading, :body, :photo )
-    end
+  def post_params
+    params.require(:post).permit(:heading, :sub_heading, :body, images_attributes: [:id, :photo, :post_id])
+  end
+
 end
+
+
+
+
+
+
+
+
+
