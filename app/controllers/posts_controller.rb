@@ -21,7 +21,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
     respond_to do |format|
       if @post.save
         flash[:success] = 'Post was successfully created'
@@ -62,6 +61,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:heading, :sub_heading, :body )
+      params.require(:post).permit(:heading, :sub_heading, :body, :photo )
     end
 end
