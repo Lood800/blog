@@ -9,7 +9,7 @@
 			<% post.images.each do |image| %>
 			<figure id="image_thumb">
 					<%= image_tag image.photo.url(:thumb).to_s %>
-					<figcaption>koos</figcaption>
+					<figcaption><%= image.caption %></figcaption>
 				</figure>
 			<% end %>
 			<br>

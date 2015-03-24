@@ -26,12 +26,18 @@
   <% if @post.images.present? %>
     <% @post.images.each do |image| %>
       <%= image_tag image.photo.url(:thumb).to_s %>
+      <%= image.caption %><br>
+      <br>
     <% end %>
   <% end %>
   <%= f.fields_for :images, Image.new do |u| %>
     <div class="field">
-        <%= u.label :photo %><br />
-        <%= u.file_field :photo %>
+      <%= u.label :photo %><br />
+      <%= u.file_field :photo %>
+    </div>
+    <div class="field">
+      <%= u.label :caption %><br />
+      <%= u.text_field :caption, cols: 150 %>
     </div>
   <% end %>
   <div class="actions">

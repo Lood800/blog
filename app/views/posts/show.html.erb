@@ -8,7 +8,7 @@
 	<% @post.images.each do |image| %>
 	<figure id="figure_medium">
 		<%= image_tag image.photo.url(:medium).to_s %>
-		<figcaption id="figcaption"></figcaption>
+		<figcaption id="figcaption"><%= image.caption %></figcaption>
 	</figure>
 	<% end %>
 	<br>
