@@ -34,13 +34,16 @@
     <div class="field">
       <%= u.label :photo %><br />
       <%= u.file_field :photo %>
+      <br>
     </div>
     <div class="field">
       <%= u.label :caption %><br />
       <%= u.text_field :caption, cols: 150 %>
+      <br>
     </div>
   <% end %>
   <div class="actions">
+    <br>
     <%= f.submit 'Submit', :class => 'btn btn-default' %>
   </div>
 <% end %>

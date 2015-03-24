@@ -1,0 +1,37 @@
+<%= form_for(@bio) do |f| %>
+  <% if @bio.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h4><%= pluralize(@bio.errors.count, "error") %> prohibited this post from being saved:</h4>
+
+      <ul>
+      <% @bio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :info %><br>
+    <%= f.text_field :info %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body, rows: 15, cols: 150 %>
+  </div>
+  <% if @bio.profile_pic.present? %>
+    <%= image_tag @bio.profile_pic.url(:thumb) %><br/>
+  <% end %>
+  <div class="field">
+    <%= f.label :profile_pic %><br>
+    <%= f.file_field :profile_pic, rows: 15, cols: 150 %>
+    <br>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit', :class => 'btn btn-default' %>
+  </div>
+<% end %>

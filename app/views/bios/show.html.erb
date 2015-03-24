@@ -1,0 +1,11 @@
+<% provide(:title, "About") %>
+
+<div class="center jumbotron">
+	<h2><%= @bio.name %></h2>
+	<h3><%= @bio.info %></h3>
+	<p><%= simple_format(@bio.body, :sanitize => false) %></p>
+	<%= image_tag @bio.profile_pic.url(:medium).to_s %>
+	<br>
+</div>
+
+<%= link_to 'Edit', edit_bio_path(@bio) %>

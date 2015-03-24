@@ -4,7 +4,7 @@
 <div class="center jumbotron">
 	<h2><%= @post.heading %></h2>
 	<h3><%= @post.sub_heading %></h3>
-	<h5><%= simple_format(@post.body, :sanitize => false) %></h5>
+	<p><%= simple_format(@post.body, :sanitize => false) %></p>
 	<% @post.images.each do |image| %>
 	<figure id="figure_medium">
 		<%= image_tag image.photo.url(:medium).to_s %>

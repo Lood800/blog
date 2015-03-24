@@ -1,0 +1,9 @@
+<div>
+	<h2><%= @bios_last.name %></h2>
+	<h3><%= @bios_last.info %></h3>
+	<p><%= simple_format(@bios_last.body, :sanitize => false) %></p>
+	<%= image_tag @bios_last.profile_pic.url(:medium).to_s %>
+	<br>
+</div>
+<br>
+<%= link_to 'Edit', edit_bio_path(@bios_last) %>

@@ -6,6 +6,7 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+  	@bios_last = Bio.last
   end
 
   def contact
