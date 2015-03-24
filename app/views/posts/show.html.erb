@@ -7,7 +7,9 @@
 	<h5><%= simple_format(@post.body, :sanitize => false) %></h5>
 	<% @post.images.each do |image| %>
 	 <%= image_tag image.photo.url(:thumb).to_s %><br>
+	 <br>
 	<% end %>
+	<br>
 	<%= link_to "Click here to comment", "posts/#{@post.id}/", class: "btn btn-lg btn-primary" %>
 </div>
 
