@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 gem 'pry', :group => :development
 gem 'rmagick', :require => 'RMagick'
+gem 'bootstrap_form'
 
 
 group :development, :test do

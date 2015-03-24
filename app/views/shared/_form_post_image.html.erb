@@ -25,7 +25,7 @@
   </div>
   <% if @post.images.present? %>
     <% @post.images.each do |image| %>
-      <%= image_tag image.photo %>
+      <%= image_tag image.photo.url(:thumb).to_s %>
     <% end %>
   <% end %>
   <%= f.fields_for :images, Image.new do |u| %>
