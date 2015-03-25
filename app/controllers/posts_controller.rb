@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @images = Image.new
   end
 
   def edit
@@ -60,7 +61,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:heading, :sub_heading, :body, images_attributes: [:id, :photo, :post_id, :caption])
+    params.require(:post).permit(:heading, :sub_heading, :body, images_attributes: [:id, :photo, :post_id, :caption, :_destroy])
   end
 
 end
