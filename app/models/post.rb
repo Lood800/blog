@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 	accepts_nested_attributes_for :images, 
 																:allow_destroy => true,
 		                            :reject_if => lambda {
-		                              |a| a['photo'].blank?
+		                              |a| a['photo'].blank? && a['caption'].blank?
 		                            }
 	validates :heading, :body, presence: true
 	

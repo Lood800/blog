@@ -6,22 +6,19 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def new
     @post = Post.new
-    @images = Image.new
+    5.times { @post.images.build }
   end
 
   def edit
-    @post = Post.find(params[:id])
-    @post.images.build
+    5.times { @post.images.build }
   end
 
   def create
     @post = Post.new(post_params)
-    @images = Image.new(post_params)
     respond_to do |format|
       if @post.save
         flash[:success] = 'Post was successfully created'
@@ -36,7 +33,7 @@ class PostsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @post.update_attributes(post_params)
+      if @post.update(post_params)
         flash[:success] = 'Post was successfully updated'
         format.html { redirect_to @post }
         format.json { render :show, status: :ok, location: @post }
