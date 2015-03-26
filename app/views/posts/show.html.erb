@@ -6,7 +6,7 @@
 	<h3><%= @post.sub_heading %></h3>
 	<p><%= simple_format(@post.body, :sanitize => false) %></p>
 	<% @post.images.each do |image| %>
-	<figure id="figure_medium">
+	<figure>
 		<%= image_tag image.photo.url(:medium).to_s %>
 		<figcaption id="figcaption"><%= image.caption %></figcaption>
 	</figure>

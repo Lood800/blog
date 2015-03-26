@@ -14,28 +14,22 @@
     <%= f.label :body %><br>
     <%= f.text_area :body, rows: 15, cols: 150 %>
   </div>
-  <%= f.fields_for 'images_attributes[]', Image.new do |u| %>
-    <% if @post.images.present? %>
-      <% @post.images.each do |image| %>
-        <%= image_tag image.photo.url(:thumb).to_s %>
-        <%= image.caption %><br>
-        <div class="field">
-          <%= u.hidden_field :id %>
-          <%= u.label :_destroy, "Delete Photo" %>
-          <%= u.check_box :_destroy %>
-        </div>
+  <%= f.fields_for :images do |u| %>
+    <div id="border">
+      <br>
+      <%= u.label :photo %><br>
+        <%= image_tag(u.object.photo.url(:thumb)) %>
+        Delete: <%= u.check_box :_destroy %>
+      <div class="field">
+        <%= u.file_field :photo %>
         <br>
-      <% end %>
-    <% end %>
-    <div class="field">
-      <%= u.label :photo %><br />
-      <%= u.file_field :photo %>
-      <br>
-    </div>
-    <div class="field">
-      <%= u.label :caption %><br />
-      <%= u.text_field :caption, cols: 150 %>
-      <br>
+      </div>
+      <div class="field">
+        <%= u.label :caption %>
+        <%= u.text_field :caption %>
+        <br>
+        <br>
+      </div>
     </div>
   <% end %>
   <div class="actions">
