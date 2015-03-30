@@ -10,5 +10,8 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+    @detail_last = Detail.last
   end
+
 end
+

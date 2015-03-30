@@ -36,7 +36,7 @@ def update
   respond_to do |format|
     if @bio.update(bio_params)
       flash[:success] = 'Post was successfully updated'
-      format.html { redirect_to about_path }
+      format.html { redirect_to contact_path }
       format.json { render :show, status: :ok, location: @bio }
     else
       format.html { render :edit }

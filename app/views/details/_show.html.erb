@@ -1,0 +1,7 @@
+<div>
+	<h2><%= @detail_last.name %></h2>
+	<h3><%= number_to_phone @detail_last.phone %></h3>
+	<h3><%= mail_to @detail_last.email %></h3>
+</div>
+<br>
+<%= link_to 'Edit', edit_detail_path(@detail_last) %>
