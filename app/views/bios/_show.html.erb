@@ -6,4 +6,7 @@
 	<br>
 </div>
 <br>
-<%= link_to 'Edit', edit_bio_path(@bios_last) %>
+
+<% if logged_in? %>
+	<%= link_to 'Edit', edit_bio_path(@bios_last) %>
+<% end %>

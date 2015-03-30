@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :edit, :create, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_post
 
   def index
     @posts = Post.all.reverse
@@ -61,6 +63,19 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:heading, :sub_heading, :body, images_attributes: [:id, :photo, :post_id, :caption, :_destroy])
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
+  end
+
+  def invalid_post
+    logger.error "Attempt to access invalid user #{params[:id]}"
+    redirect_to root_url
+    flash[:danger] = "Invalid post"
   end
 
 end

@@ -12,9 +12,14 @@
 	</figure>
 	<% end %>
 	<br>
-	<%= link_to "Click here to comment", "posts/#{@post.id}/", class: "btn btn-lg btn-primary" %>
+	<%= link_to "Click here to comment", "posts/#{@post.id}/", class: "btn btn-lg btn-primary" %><br>
+	<br>
+	<%= link_to 'Show All Posts', posts_path %>
+	<% if logged_in? %>
+		| <%= link_to 'New', new_post_path %> |
+		<%= link_to 'Edit', edit_post_path(@post) %>
+<% end %>
 </div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Show All', posts_path %> |
-<%= link_to 'New', new_post_path %>
+
+
