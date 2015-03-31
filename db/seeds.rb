@@ -315,8 +315,8 @@ Post.create!( heading: 'African Spoonbill',
 
 
 Bio.create!(name: 'Lodewicus Adriaans',
-                        info: 'Pretoria',
-                        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan, odio ut tincidunt interdum, lacus lacus interdum ipsum, in facilisis orci ligula ut tortor. Fusce ultricies blandit diam id tristique. Nulla facilisi. Aenean eu convallis mi, nec tristique ligula. Aenean sed mauris imperdiet, tristique turpis nec, laoreet lorem. Ut porttitor, elit vel vulputate accumsan, eros risus porttitor velit, quis molestie lectus mi quis lorem. Pellentesque rutrum bibendum cursus. Integer ut lectus scelerisque, lobortis neque at, ornare enim. Nulla luctus molestie felis, sed scelerisque nunc pulvinar quis. Morbi finibus vel mauris nec tristique.
+            info: 'Pretoria',
+            body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan, odio ut tincidunt interdum, lacus lacus interdum ipsum, in facilisis orci ligula ut tortor. Fusce ultricies blandit diam id tristique. Nulla facilisi. Aenean eu convallis mi, nec tristique ligula. Aenean sed mauris imperdiet, tristique turpis nec, laoreet lorem. Ut porttitor, elit vel vulputate accumsan, eros risus porttitor velit, quis molestie lectus mi quis lorem. Pellentesque rutrum bibendum cursus. Integer ut lectus scelerisque, lobortis neque at, ornare enim. Nulla luctus molestie felis, sed scelerisque nunc pulvinar quis. Morbi finibus vel mauris nec tristique.
 
 Aliquam vitae est posuere, tincidunt lectus vel, ullamcorper magna. Cras venenatis orci quis velit rutrum, vitae bibendum ante dignissim. Sed aliquet diam vel tempus feugiat. Pellentesque hendrerit sed leo et consequat. Etiam ac enim vehicula, venenatis neque non, condimentum massa. Nullam eleifend risus nec egestas ultrices. Praesent vel leo sed dolor varius congue et nec felis. Maecenas commodo et nunc faucibus accumsan.
 
@@ -341,5 +341,11 @@ Proin nec suscipit felis. Aliquam erat volutpat. Donec in consequat erat, id tem
 Nam odio nunc, rutrum quis molestie at, imperdiet in justo. Quisque turpis leo, consectetur convallis risus a, ultricies volutpat neque. Quisque ante dolor, ultrices non faucibus laoreet, porttitor et tellus. Etiam pharetra leo quis turpis dictum feugiat. Aliquam viverra metus vitae leo pretium condimentum. Cras sed diam sem. Aenean volutpat mi lacus. Aliquam fringilla pellentesque diam non bibendum. Ut semper sem enim, vel varius diam tempor quis. Quisque non placerat nisl, quis ornare augue. Sed ac vehicula lorem. In malesuada tellus leo, ut elementum felis elementum ac.
 
 Suspendisse fermentum pellentesque accumsan. Vestibulum finibus accumsan mauris, a finibus nisi aliquet eu. Suspendisse aliquam, nibh eget gravida dignissim, ante lectus porta lectus, sit amet blandit neque ex ac nunc. Etiam vehicula ornare tortor a placerat. Donec vel dui vel nisl consequat commodo viverra')
+
+
+
+Detail.create!( name: 'Lodewicus Adriaanse',
+                phone: '0828756591',
+                email: 'lodewicus@gmail.com')
 
 
