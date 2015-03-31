@@ -14,6 +14,8 @@ gem 'carrierwave'
 gem 'pry', :group => :development
 gem 'rmagick', :require => 'RMagick'
 gem 'bootstrap_form'
+gem 'compass'
+gem 'haml'
 
 
 group :development, :test do
