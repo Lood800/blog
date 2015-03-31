@@ -6,10 +6,10 @@
 	<h3><%= @post.sub_heading %></h3>
 	<p id="text_justify"><%= simple_format(@post.body, :sanitize => false) %></p>
 	<% @post.images.each do |image| %>
-	<figure id="figure_medium">
-		<%= image_tag image.photo.url(:medium).to_s %>
-		<figcaption id="figcaption"><%= image.caption %></figcaption>
-	</figure>
+		<figure id="figure_medium">
+			<%= image_tag image.photo.url(:medium).to_s %>
+			<figcaption id="figcaption"><%= image.caption %></figcaption>
+		</figure>
 	<% end %>
 	<br>
 	<%= link_to "Click here to comment", "posts/#{@post.id}/", class: "btn btn-lg btn-primary" %><br>
