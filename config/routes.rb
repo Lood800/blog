@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :images,          only: [:create, :destroy]
 
-  resources :bios,            only: [:show, :edit, :update]
+  resources :bios,            only: [:new, :create, :show, :edit, :update]
 
   resources :details,         only: [:show, :edit, :update]
 
