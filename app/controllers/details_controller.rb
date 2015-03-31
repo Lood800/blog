@@ -9,27 +9,27 @@ class DetailsController < ApplicationController
 
 	end
 
-	# def new
- #    @detail = Detail.new
- #  end
+	def new
+    @detail = Detail.new
+  end
 
   def edit
     
   end
 
-  # def create
-  #   @detail = Detail.new(detail_params)
-  #   respond_to do |format|
-  #     if @detail.save
-  #       flash[:success] = 'Detail was successfully created'
-  #       format.html { redirect_to @detail }
-  #       format.json { render :show, status: :created, location: @detail }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @detail.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  def create
+    @detail = Detail.new(detail_params)
+    respond_to do |format|
+      if @detail.save
+        flash[:success] = 'Detail was successfully created'
+        format.html { redirect_to @detail }
+        format.json { render :show, status: :created, location: @detail }
+      else
+        format.html { render :new }
+        format.json { render json: @detail.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   def update
     respond_to do |format|
