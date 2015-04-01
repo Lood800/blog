@@ -16,7 +16,14 @@
 	  	<br>
 	  </div>
 	  <div id="submit_button">
-		<%= link_to "Click here to read more and comment", "posts/#{post.id}/", class: "btn btn-lg btn-primary" %>
+		<%= link_to "Click here to read more and comment", posts_path, class: "btn btn-lg btn-primary" %>
 		</div>		
 	</div>
+	<% if mobile_device? %>
+		<div class="jumbotron center" id="jumbo">
+			<%= link_to "Click here to show all posts", "posts/", class: "btn btn-lg btn-primary" %>
+		</div>
+	<% end %>
 <% end %>
+
+
