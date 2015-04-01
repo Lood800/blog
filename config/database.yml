@@ -21,9 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-	adapter: postgresql
+  adapter: postgresql
   encoding: utf8	
-  database: project_production
+  database: blog_production
   pool: 5
-  username: lood800
-  password: lodekoos
+  username: postgres
+  port:
+  host: localhost
