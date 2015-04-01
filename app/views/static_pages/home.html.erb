@@ -7,5 +7,7 @@
   </h3>
   <%= link_to "Click here to read my Bio!", about_path, class: "btn btn-lg btn-primary" %>
 </div>
-<%= render 'posts/side_main', posts: @posts_recent_ten, posts: @posts %>
+<% unless mobile_device? %>
+	<%= render 'posts/side_main', posts: @posts_recent_ten, posts: @posts %>
+<% end %>
 <%= render 'posts/posts_main', posts: @posts_recent_five %>
