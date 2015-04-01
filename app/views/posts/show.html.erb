@@ -12,7 +12,9 @@
 		</figure>
 	<% end %>
 	<br>
-	<%= content_tag(:div, nil, :class => 'fb-comments', "data-href" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "data-width" => '470', "data-num-posts" => "2"  ) %>
+	<div class="fb-comments" data-href="<%= request.protocol + request.host_with_port + request.path %>" data-width="600" data-num-posts="10"></div>
+	<br>
+	<br>
 	<%= link_to "Click here to comment", "posts/#{@post.id}/", class: "btn btn-lg btn-primary" %><br>
 	<br>
 	<%= link_to 'Show All Posts', posts_path %>
