@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <% posts.each do |post| %>
+<% if mobile_device? %>
+	<div class="jumbotron center">
+<% else %>
 	<div class="jumbotron center" id="jumbo">
+<% end %>
 		<h2><%= post.heading %></h2>
 		<h3><%= post.sub_heading %></h3>
 		<p><%= simple_format(post.body, :sanitize => false) %></p>
@@ -16,14 +20,18 @@
 	  	<br>
 	  </div>
 	  <div id="submit_button">
-		<%= link_to "Click here to read more and comment", posts_path, class: "btn btn-lg btn-primary" %>
+		<%= link_to "Click here to read more and comment", "posts/#{post.id}/", class: "btn btn-lg btn-primary" %>
 		</div>		
 	</div>
 <% end %>
 <% if mobile_device? %>
 	<div class="jumbotron center" id="jumbo">
-		<%= link_to "Click here to see all posts", "posts/", class: "btn btn-lg btn-primary" %>
+		<%= link_to "Click here to show all posts", posts_path, class: "btn btn-lg btn-primary" %>
 	</div>
+	<div class="fb-follow" data-href="https://www.facebook.com/lood800" data-width="100" data-height="100" data-colorscheme="light" data-layout="button_count" data-show-faces="true">
+	</div>
+	<div class="fb-like" data-href="https://vast-sea-7386.herokuapp.com/" data-width="50" data-layout="standard" data-action="like" data-show-faces="true" data-share="true">
+	</div><br>
 <% end %>
 
 

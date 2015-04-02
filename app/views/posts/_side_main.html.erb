@@ -16,8 +16,10 @@
 		<% end %>
 		<br>
 		<br>
-		<div class="fb-follow" data-href="https://www.facebook.com/lood800" data-width="100" data-height="100" data-colorscheme="light" data-layout="button_count" data-show-faces="true"></div><br>
-		<br>
-		<div class="fb-like" data-href="https://vast-sea-7386.herokuapp.com/" data-width="50" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div><br>
-		<br>
+		<% unless mobile_device? %>
+			<div class="fb-follow" data-href="https://www.facebook.com/lood800" data-width="100" data-height="100" data-colorscheme="light" data-layout="button_count" data-show-faces="true"></div><br>
+			<br>
+			<div class="fb-like" data-href="https://vast-sea-7386.herokuapp.com/" data-width="50" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div><br>
+			<br>
+		<% end %>
 </aside>
