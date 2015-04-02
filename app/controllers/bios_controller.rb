@@ -21,7 +21,7 @@ def create
   @bio = Bio.new(bio_params)
   respond_to do |format|
     if @bio.save
-      flash[:success] = 'Post was successfully created'
+      flash[:success] = 'About page was successfully created'
       format.html { redirect_to about_path }
       format.json { render :show, status: :created, location: @bio }
     else
@@ -35,8 +35,8 @@ def update
 	@bio = Bio.find(params[:id])
   respond_to do |format|
     if @bio.update(bio_params)
-      flash[:success] = 'Post was successfully updated'
-      format.html { redirect_to contact_path }
+      flash[:success] = 'About page was successfully updated'
+      format.html { redirect_to about_path }
       format.json { render :show, status: :ok, location: @bio }
     else
       format.html { render :edit }

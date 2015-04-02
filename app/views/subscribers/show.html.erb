@@ -1,0 +1,11 @@
+
+<% provide(:title, "Subscribed") %>
+
+<div class="center jumbotron">
+
+	<h3><%= @subscriber.name %> you will be notified on <%= @subscriber.email %> as soon as there is a new post</h3>
+
+	<%= link_to 'Unsubscribe', @subscriber, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-primary" %>
+
+</div>
+

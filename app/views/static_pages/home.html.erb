@@ -5,7 +5,7 @@
   <h3>
     This is the home page of Lood800, a blog about birds
   </h3>
-  <%= link_to "Click here to read my Bio!", about_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "Click here to subscribe to my blog posts", new_subscriber_path, class: "btn btn-lg btn-primary" %>
 </div>
 <% unless mobile_device? %>
 	<%= render 'posts/side_main', posts: @posts_recent_ten, posts: @posts %>

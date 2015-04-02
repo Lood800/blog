@@ -33,9 +33,6 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<% if logged_in? %>
-  <%= link_to 'New Post', new_post_path %>
-<% end %>
+<div class="center jumbotron">
+    <%= link_to "Click here to subscribe to my blog posts", new_subscriber_path, class: "btn btn-lg btn-primary" %>
+</div>

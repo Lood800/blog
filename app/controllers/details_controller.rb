@@ -21,7 +21,7 @@ class DetailsController < ApplicationController
     @detail = Detail.new(detail_params)
     respond_to do |format|
       if @detail.save
-        flash[:success] = 'Detail was successfully created'
+        flash[:success] = 'Contact was successfully created'
         format.html { redirect_to @detail }
         format.json { render :show, status: :created, location: @detail }
       else
@@ -34,7 +34,7 @@ class DetailsController < ApplicationController
   def update
     respond_to do |format|
       if @detail.update(detail_params)
-        flash[:success] = 'Detail was successfully updated'
+        flash[:success] = 'Contact page was successfully updated'
         format.html { redirect_to contact_path }
         format.json { render :show, status: :ok, location: contact_path }
       else
