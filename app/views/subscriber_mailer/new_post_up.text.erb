@@ -1,3 +1,11 @@
-SubscriberMailer#new_post_up
+<%= @post.heading.capitalize %>
 
-<%= @greeting %>, find me in app/views/subscriber_mailer/new_post_up.text.erb
+<%= @post.sub_heading.capitalize %>
+
+<%= truncate(@post.body, :length => 500) %>
+
+<%= pluralize(@post.images.count, "photo") %>
+
+<%= link_to "Click here for the full story and photos", post_url(@post) %>
+
+Click here to <%= link_to "Unsubscribe", subscriber_url(@subscriber) %>

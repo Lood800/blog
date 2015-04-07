@@ -15,6 +15,7 @@ gem 'rmagick', :require => 'RMagick'
 gem 'bootstrap_form'
 gem 'compass'
 gem 'haml'
+gem 'quiet_assets', group: :development
 
 
 group :development, :test do

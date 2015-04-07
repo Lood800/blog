@@ -1,24 +1,21 @@
-class SubscriberMailer < ApplicationMailer
+  class SubscriberMailer < ApplicationMailer
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.subscriber_mailer.welcome.subject
   #
-  def welcome
-    @greeting = "Hi"
+  def welcome(subscriber)
+    @subscriber = subscriber
 
-    mail to: "to@example.org"
+    mail to: @subscriber.email, subject: "Welcome to Lood800.com"
   end
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.subscriber_mailer.new_post_up.subject
-  #
-  def new_post_up
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def new_post_up(post, subscriber)
+    @post = post
+    @subscriber = subscriber
+    mail to: @subscriber.email, subject: "New post by Lood800.com: #{@post.heading}"
   end
+
+
 end

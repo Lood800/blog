@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+  class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:new, :edit, :create, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_post
@@ -23,6 +23,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
+        send_new_post_email(@post)
         flash[:success] = 'Post was successfully created'
         format.html { redirect_to @post }
         format.json { render :show, status: :created, location: @post }
@@ -76,6 +77,12 @@ class PostsController < ApplicationController
     logger.error "Attempt to access invalid user #{params[:id]}"
     redirect_to root_url
     flash[:danger] = "Invalid post"
+  end
+
+  def send_new_post_email(post)
+    Subscriber.find_each do |subs|
+      SubscriberMailer.new_post_up(post, subs).deliver_now
+    end
   end
 
 end

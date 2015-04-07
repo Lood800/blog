@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:show, :index, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_user
 
   def index
@@ -42,11 +42,16 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
-    respond_to do |format|
-      flash[:success] = 'User was successfully destroyed'
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
+    if last_user
+      redirect_to users_url
+      flash[:danger] = "You can not delete the last user"
+    else
+      @user.destroy
+      respond_to do |format|
+        flash[:success] = 'User was successfully destroyed'
+        format.html { redirect_to users_url }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -73,6 +78,10 @@ class UsersController < ApplicationController
     logger.error "Attempt to access invalid user #{params[:id]}"
     redirect_to root_url
     flash[:danger] = "Invalid user"
+  end
+
+  def last_user
+    User.all.length <= 1
   end
 
 end

@@ -1,5 +1,7 @@
 class SubscribersController < ApplicationController
 	before_action :set_subscriber, only: [:show, :destroy]
+  before_action :logged_in_user, only: [:index]
+
 
 	def show
 
@@ -19,8 +21,9 @@ class SubscribersController < ApplicationController
     @subscriber.name = @subscriber.name.titleize
     respond_to do |format|
       if @subscriber.save
-        flash[:success] = 'Successfully subscribed'
-        format.html { redirect_to @subscriber }
+      	SubscriberMailer.welcome(@subscriber).deliver_now
+        flash[:success] = 'Successfully subscribed, you will be emailed as soon as there is a new post'
+        format.html { redirect_to root_path }
         format.json { render :show, status: :created, location: @subscriber }
       else
         format.html { render :new }
@@ -48,6 +51,13 @@ class SubscribersController < ApplicationController
 
   def subscriber_params
   	params.require(:subscriber).permit(:name, :email)
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
   end
 
 

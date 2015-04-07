@@ -16,11 +16,8 @@
   <tbody>
     <% @subscribers.each do |subscriber| %>
       <tr class="conver">
-        <td><%= subsciber.name %></td>
+        <td><%= subscriber.name %></td>
         <td><%= subscriber.email %></td>
-        <td><%= truncate(post.body, :length => 200) %></td>
-        <td><%= post.created_at.strftime("%d %B %Y") %></td>
-        <td><%= post.images.count %></td>
         <td><%= link_to 'Destroy', subscriber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

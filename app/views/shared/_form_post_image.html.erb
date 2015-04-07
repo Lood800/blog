@@ -2,40 +2,51 @@
   
   <%= render 'shared/errors' %>
 
-  <div class="field form-group">
-    <%= f.label :heading %><br>
-    <%= f.text_field :heading %>
-  </div>
-  <div class="field">
-    <%= f.label :sub_heading %><br>
-    <%= f.text_field :sub_heading %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body, rows: 15, cols: 150 %>
-  </div>
-  <%= f.fields_for :images do |u| %>
-    <div id="border">
+  <div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+      
+      <%= f.label :heading %>
+      <%= f.text_field :heading, class: 'form-control' %>
+
+      <%= f.label :sub_heading %>
+      <%= f.text_field :sub_heading, class: 'form-control' %>
+
+      <%= f.label :body %>
+      <%= f.text_area :body, rows: 15, cols: 100, class: 'form-control' %>
+
+
+      <%= f.fields_for :images do |u| %>
+
+        <div id="border">
+
+          <br>
+
+          <%= u.label :photo %>
+          <%= u.file_field :photo %>
+
+          <br>
+
+          <%= u.label :caption %>
+          <%= u.text_field :caption, class: 'form-control' %>
+
+          <br>
+
+          <%= image_tag(u.object.photo.url(:thumb)) %>
+          Delete: <%= u.check_box :_destroy %><br>
+
+          <br>
+
+        </div> 
+
+      <% end %>
+
       <br>
-      <div class="field">
-        <%= u.label :photo %><br>
-        <%= u.file_field :photo %>
-        <br>
-        <%= image_tag(u.object.photo.url(:thumb)) %>
-        Delete: <%= u.check_box :_destroy %>
-      </div>
-      <div class="field">
-        <br>
-        <%= u.label :caption %>
-        <%= u.text_field :caption %>
-        <br>
-        <br>
-      </div>
+
+      <%= f.submit 'Submit', class: "btn btn-primary"  %>
+
     </div>
-  <% end %>
-  <div class="actions">
-    <br>
-    <%= f.submit 'Submit', :class => 'btn btn-default' %>
+
   </div>
-  <br>
+
 <% end %>

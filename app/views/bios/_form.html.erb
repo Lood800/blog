@@ -11,27 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :info %><br>
+      <%= f.text_field :info, class: 'form-control' %>
+
+      <%= f.label :body %><br>
+      <%= f.text_area :body, rows: 15, cols: 150, class: 'form-control' %><br>
+      
+      <% if @bio.profile_pic.present? %>
+        <%= image_tag @bio.profile_pic.url(:thumb) %><br/>
+      <% end %>
+
+      <%= f.label :profile_pic %>
+      <%= f.file_field :profile_pic %><br>
+
+      <%= f.submit 'Submit', class: "btn btn-primary" %>
+
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :info %><br>
-    <%= f.text_field :info %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body, rows: 15, cols: 150 %>
-  </div>
-  <% if @bio.profile_pic.present? %>
-    <%= image_tag @bio.profile_pic.url(:thumb) %><br/>
-  <% end %>
-  <div class="field">
-    <%= f.label :profile_pic %><br>
-    <%= f.file_field :profile_pic, rows: 15, cols: 150 %>
-    <br>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Submit', :class => 'btn btn-default' %>
-  </div>
+
 <% end %>

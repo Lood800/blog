@@ -1,3 +1,7 @@
-SubscriberMailer#welcome
+Hi <%= @subscriber.name %>
 
-<%= @greeting %>, find me in app/views/subscriber_mailer/welcome.text.erb
+Welcome to Lood800.com
+
+You will be emailed on <%= @subscriber.email %> everytime there is a new blog post.
+
+Click here to <%= link_to "Unsubscribe", subscriber_url(@subscriber) %>

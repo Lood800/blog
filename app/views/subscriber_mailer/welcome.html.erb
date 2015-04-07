@@ -1,5 +1,6 @@
-<h1>SubscriberMailer#welcome</h1>
-
-<p>
-  <%= @greeting %>, find me in app/views/subscriber_mailer/welcome.html.erb
-</p>
+<div style="background-color: #eeeeee;width: 750px;text-align:center;border:1px solid #777">
+	<h1 style="color: black;text-decoration:underline;">Hi <%= @subscriber.name %></h1>
+	<h2 style="color: #777">Welcome to Lood800.com<h2>
+	<h4 style="color: black">You will be emailed on <%= @subscriber.email %> everytime there is a new blog post<h4>
+	<p>Click here to <%= link_to "Unsubscribe", subscriber_url(@subscriber) %></p>
+</div>
