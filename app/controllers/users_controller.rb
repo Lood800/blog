@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:show, :index, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :show, :index, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_user
 
   def index

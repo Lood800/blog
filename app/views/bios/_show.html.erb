@@ -2,7 +2,9 @@
 	<h2><%= @bios_last.name %></h2>
 	<h3><%= @bios_last.info %></h3>
 	<p><%= markdown(@bios_last.body) %></p>
-	<%= image_tag @bios_last.profile_pic.url(:medium).to_s %>
+	<figure id="profile_pic">
+		<%= image_tag @bios_last.profile_pic.url(:medium).to_s %>
+	</figure>
 	<br>
 </div>
 <br>

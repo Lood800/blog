@@ -1,4 +1,6 @@
 class BiosController < ApplicationController
+  before_action :logged_in_user, only: [:index, :edit]
+
 
 def index
   @bios = Bio.all
@@ -8,28 +10,10 @@ def show
   @bio = Bio.find(params[:id])
 end
 
-def new 
-	@bio = Bio.new
-end
-
 def edit
 	 @bio = Bio.find(params[:id])
 end
 
-
-def create
-  @bio = Bio.new(bio_params)
-  respond_to do |format|
-    if @bio.save
-      flash[:success] = 'About page was successfully created'
-      format.html { redirect_to about_path }
-      format.json { render :show, status: :created, location: @bio }
-    else
-      format.html { render :new }
-      format.json { render json: @bio.errors, status: :unprocessable_entity }
-    end
-  end
-end
 
 def update
 	@bio = Bio.find(params[:id])
@@ -53,6 +37,13 @@ private
 	
 def bio_params
 	params.require(:bio).permit(:name, :info, :body, :profile_pic)
+end
+
+def logged_in_user
+  unless logged_in?
+    flash[:danger] = "Please log in."
+    redirect_to login_url
+  end
 end
 
 

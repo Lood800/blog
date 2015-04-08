@@ -8,7 +8,9 @@
         <li><%= link_to "Contact", contact_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Log out", logout_path, method: "delete" %>
-          <li><%= link_to 'New Post', new_post_path %></li>  
+          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to 'Subscribers', subscribers_path %></li>
+          <li><%= link_to 'New Post', new_post_path %></li> 
         <% end %>
       </ul>
     </nav>

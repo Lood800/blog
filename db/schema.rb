@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402090118) do
+ActiveRecord::Schema.define(version: 20150408080713) do
 
   create_table "bios", force: :cascade do |t|
     t.string   "name"
@@ -59,8 +59,9 @@ ActiveRecord::Schema.define(version: 20150402090118) do
   create_table "subscribers", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "unsubscribe_key"
   end
 
   create_table "users", force: :cascade do |t|

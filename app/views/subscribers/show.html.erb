@@ -2,10 +2,6 @@
 <% provide(:title, "Subscribed") %>
 
 <div class="center jumbotron">
-
-	<h3><%= @subscriber.name %>, sorry to see you go. <%= @subscriber.email %> will be deleted from our mailing list as soon as you click below</h3>
-
-	<%= link_to 'Unsubscribe', @subscriber, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-primary" %>
-
+	<%= link_to 'Unsubscribe', @subscriber, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
 </div>
 

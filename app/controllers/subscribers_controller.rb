@@ -1,10 +1,9 @@
 class SubscribersController < ApplicationController
-	before_action :set_subscriber, only: [:show, :destroy]
   before_action :logged_in_user, only: [:index]
 
 
 	def show
-    
+    @subscriber = Subscriber.find_by(unsubscribe_key: params[:unsubscribe_key])
 	end
 
 
@@ -18,6 +17,7 @@ class SubscribersController < ApplicationController
 
  	def create
     @subscriber = Subscriber.new(subscriber_params)
+    @subscriber.unsubscribe_key = SecureRandom.urlsafe_base64
     @subscriber.name = @subscriber.name.titleize
     respond_to do |format|
       if @subscriber.save
@@ -33,24 +33,24 @@ class SubscribersController < ApplicationController
   end
 
   def destroy
-    @subscriber.destroy
-    respond_to do |format|
-      flash[:success] = 'You have been successfully unsubscribed'
-      format.html { redirect_to root_path }
-      format.json { head :no_content }
+    if params[:id].length > 20
+      @subscriber = Subscriber.find_by(unsubscribe_key: params[:id])
+      destroy_message
+    else
+      if logged_in?
+        @subscriber = Subscriber.find_by(id: params[:id])
+        destroy_message
+      else
+        flash[:danger] = "You are not allowed to unsubscribe this subscriber"
+        redirect_to root_path
+      end
     end
   end
 
-
-
   private
 
-  def set_subscriber
-    @subscriber = Subscriber.find(params[:id])
-  end
-
   def subscriber_params
-  	params.require(:subscriber).permit(:name, :email)
+  	params.require(:subscriber).permit(:name, :email, :unsubscribe_key)
   end
 
   def logged_in_user
@@ -60,6 +60,10 @@ class SubscribersController < ApplicationController
     end
   end
 
-  
+  def destroy_message
+    @subscriber.destroy
+    flash[:success] = 'Subscriber has been successfully unsubscribed'
+    redirect_to root_path
+  end
 
 end

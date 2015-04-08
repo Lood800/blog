@@ -1,5 +1,6 @@
 class DetailsController < ApplicationController
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :edit]
 
 	def index
 		@details = Detail.all
@@ -9,26 +10,8 @@ class DetailsController < ApplicationController
 
 	end
 
-	def new
-    @detail = Detail.new
-  end
-
   def edit
     
-  end
-
-  def create
-    @detail = Detail.new(detail_params)
-    respond_to do |format|
-      if @detail.save
-        flash[:success] = 'Contact was successfully created'
-        format.html { redirect_to @detail }
-        format.json { render :show, status: :created, location: @detail }
-      else
-        format.html { render :new }
-        format.json { render json: @detail.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   def update
@@ -71,5 +54,12 @@ class DetailsController < ApplicationController
 		def detail_params
 			params.require(:detail).permit(:name, :phone, :email)
 		end
+
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
 
 end

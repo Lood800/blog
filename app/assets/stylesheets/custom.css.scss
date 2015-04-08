@@ -159,7 +159,6 @@ p {
 #figure_medium {
   display: table;
   padding: 7px 7px 5px 7px;
-  border: 2px;
   border: 1px solid #777777;
   text-align: center; 
   margin: 20px auto 20px auto;
@@ -181,6 +180,18 @@ p {
 
 .sub_new {
   text-align: center;
+}
+
+#center_images_count{
+  text-align: center;
+}
+
+#profile_pic {
+  display: table;
+  padding: 10px;
+  border: 1px solid #777777;
+  text-align: center; 
+  margin: 20px auto 20px auto;
 }
 
 

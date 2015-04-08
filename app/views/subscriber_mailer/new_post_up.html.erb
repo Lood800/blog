@@ -4,5 +4,5 @@
 	<h4 style="color: black"><%= truncate(@post.body, :length => 500) %></h4>	
 	<h4 style="color: #777"><%= pluralize(@post.images.count, "photo") %><h4>
 	<h4 style="color:white;text-decoration:none"><%= link_to "Click here for the full story and photos", post_url(@post) %></h4>
-	<p>Click here to <%= link_to "Unsubscribe", subscriber_url(@subscriber) %></p>
+	<p>Click here to <%= link_to "Unsubscribe", subscriber_url(@subscriber.unsubscribe_key, email: @subscriber.email) %></p>
 </div>

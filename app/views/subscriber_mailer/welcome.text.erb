@@ -4,4 +4,4 @@ Welcome to Lood800.com
 
 You will be emailed on <%= @subscriber.email %> everytime there is a new blog post.
 
-Click here to <%= link_to "Unsubscribe", subscriber_url(@subscriber) %>
+Click here to <%= link_to "Unsubscribe", subscriber_url(@subscriber.unsubscribe_key, email: @subscriber.email) %>
