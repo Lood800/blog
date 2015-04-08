@@ -80,8 +80,8 @@
   end
 
   def send_new_post_email(post)
-    Subscriber.find_each do |subs|
-      SubscriberMailer.new_post_up(post, subs).deliver_now
+    Subscriber.find_each do |subscriber|
+      SubscriberMailer.new_post_up(post, subscriber).deliver_now
     end
   end
 
