@@ -8,7 +8,7 @@
 <% end %>
 		<h2><%= post.heading %></h2>
 		<h3><%= post.sub_heading %></h3>
-		<p><%= simple_format(post.body, :sanitize => false) %></p>
+		<p><%= markdown(post.body) %></p>
 		<div id="images_justify">
 			<% post.images.each do |image| %>
 			<figure id="image_thumb">

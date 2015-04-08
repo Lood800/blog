@@ -16,6 +16,7 @@ gem 'bootstrap_form'
 gem 'compass'
 gem 'haml'
 gem 'quiet_assets', group: :development
+gem 'redcarpet'
 
 
 group :development, :test do

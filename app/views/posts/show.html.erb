@@ -4,7 +4,7 @@
 <div class="center jumbotron">
 	<h2><%= @post.heading %></h2>
 	<h3><%= @post.sub_heading %></h3>
-	<p id="text_justify"><%= simple_format(@post.body, :sanitize => false) %></p>
+	<p id="text_justify"><%= markdown(@post.body) %></p>
 	<% @post.images.each do |image| %>
 		<figure id="figure_medium">
 			<%= image_tag image.photo.url(:medium).to_s %>

@@ -4,7 +4,7 @@ class SubscribersController < ApplicationController
 
 
 	def show
-
+    
 	end
 
 
@@ -60,5 +60,6 @@ class SubscribersController < ApplicationController
     end
   end
 
+  
 
 end
