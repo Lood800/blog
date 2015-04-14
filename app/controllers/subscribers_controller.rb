@@ -61,9 +61,14 @@ class SubscribersController < ApplicationController
   end
 
   def destroy_message
-    @subscriber.destroy
-    flash[:success] = 'Subscriber has been successfully unsubscribed'
-    redirect_to root_path
+    if @subscriber.nil?
+      flash[:danger] = "Subscriber has already been unsubscribed"
+      redirect_to root_path
+    else
+      @subscriber.destroy
+      flash[:success] = 'Subscriber has been successfully unsubscribed'
+      redirect_to root_path
+    end
   end
 
 end

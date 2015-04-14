@@ -17,6 +17,7 @@ gem 'compass'
 gem 'haml'
 gem 'quiet_assets', group: :development
 gem 'redcarpet'
+gem 'devise'
 
 
 group :development, :test do
@@ -24,7 +25,9 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rspec-rails', '~> 3.0'
+  gem 'mongoid-rspec', '1.4.5'
   gem 'sqlite3'
+  gem 'factory_girl_rails'
 end
 
 group :production do

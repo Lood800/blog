@@ -23,6 +23,7 @@ Rails.application.configure do
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 
+
   # Disable request forgery protection in test environment.
   config.action_controller.allow_forgery_protection = false
 
@@ -35,7 +36,7 @@ Rails.application.configure do
   config.active_support.test_order = :random
 
   # Print deprecation notices to the stderr.
-  config.active_support.deprecation = :stderr
+  config.active_support.deprecation = false
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

@@ -1,20 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <% posts.each do |post| %>
-<% if mobile_device? %>
-	<div class="jumbotron center">
-<% else %>
-	<div class="jumbotron center" id="jumbo">
-<% end %>
+	<% if mobile_device? %>
+		<div class="jumbotron center">
+	<% else %>
+		<div class="jumbotron center" id="jumbo">
+	<% end %>
 		<h2><%= post.heading %></h2>
 		<h3><%= post.sub_heading %></h3>
 		<p><%= markdown(post.body) %></p>
-		<div id="images_justify">
+		<div>
+			<% x = 1 %>
 			<% post.images.each do |image| %>
-			<figure id="image_thumb">
-					<%= image_tag image.photo.url(:thumb).to_s %>
-					<figcaption><%= image.caption %></figcaption>
-				</figure>
+				<% if x == 5 %>
+					<div class="clearfix"></div>
+						<% x = 1 %>
+				<% end %>
+				<div class="col-md-3">
+					<figure id="image_thumb">
+						<%= image_tag image.photo.url(:thumb).to_s %>
+						<figcaption><%= image.caption %></figcaption>
+					</figure>
+				</div>
+				<% x += 1 %>
 			<% end %>
 			<br>
 	  	<br>
@@ -28,10 +36,10 @@
 	<div class="jumbotron center">
 		<%= link_to "Click here to show all posts", posts_path, class: "btn btn-lg btn-primary" %>
 	</div>
-	<div class="fb-follow" data-href="https://www.facebook.com/lood800" data-width="100" data-height="100" data-colorscheme="light" data-layout="button_count" data-show-faces="true">
+	<div class="fb-follow" data-href="https://www.facebook.com/lood800" data-width="100" data-height="100" data-colorscheme="							light" data-layout="button_count" data-show-faces="true">
 	</div><br>
 	<br>
-	<div class="fb-like" data-href="https://vast-sea-7386.herokuapp.com/" data-width="50" data-layout="standard" data-action="like" data-show-faces="true" data-share="true">
+	<div class="fb-like" data-href="https://vast-sea-7386.herokuapp.com/" data-width="50" data-layout="standard" data-action="						like" data-show-faces="true" data-share="true">
 	</div><br>
 <% end %>
 

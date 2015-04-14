@@ -27,24 +27,6 @@ class DetailsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @detail.destroy
-  #   respond_to do |format|
-  #     flash[:success] = 'Detail was successfully destroyed'
-  #     format.html { redirect_to details_url }
-  #     format.json { head :no_content }
-  #   end
-  # end
-
-
-
-
-
-
-
-
-
-
 	private
 
 		def set_post

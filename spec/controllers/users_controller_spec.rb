@@ -4,6 +4,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe "GET #index" do
     it "returns http success" do
+      sign_in_as_a_valid_user
       get :index
       expect(response).to have_http_status(:success)
     end
