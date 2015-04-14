@@ -11,18 +11,34 @@
 		<p><%= markdown(post.body) %></p>
 		<div>
 			<% x = 1 %>
-			<% post.images.each do |image| %>
-				<% if x == 5 %>
-					<div class="clearfix"></div>
-						<% x = 1 %>
+			<% if mobile_device? %>
+				<% post.images.each do |image| %>
+					<% if x == 3 %>
+						<div class="clearfix"></div>
+							<% x = 1 %>
+					<% end %>
+					<div class="col-md-3">
+						<figure id="image_thumb">
+							<%= image_tag image.photo.url(:thumb).to_s %>
+							<figcaption><%= image.caption %></figcaption>
+						</figure>
+					</div>
+					<% x += 1 %>
 				<% end %>
-				<div class="col-md-3">
-					<figure id="image_thumb">
-						<%= image_tag image.photo.url(:thumb).to_s %>
-						<figcaption><%= image.caption %></figcaption>
-					</figure>
-				</div>
-				<% x += 1 %>
+			<% else %>
+				<% post.images.each do |image| %>
+					<% if x == 5 %>
+						<div class="clearfix"></div>
+							<% x = 1 %>
+					<% end %>
+					<div class="col-md-3">
+						<figure id="image_thumb">
+							<%= image_tag image.photo.url(:thumb).to_s %>
+							<figcaption><%= image.caption %></figcaption>
+						</figure>
+					</div>
+					<% x += 1 %>
+				<% end %>
 			<% end %>
 			<br>
 	  	<br>
