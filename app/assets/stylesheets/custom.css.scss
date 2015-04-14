@@ -151,10 +151,12 @@ p {
   padding: 5px;
   margin: 5px;
   border: 1px;
-  border: 1px solid #777777;
+  border: 1px solid #8e8e8e;
   display: table;
   float: left;
   text-align: center;
+  box-shadow: 0 0 10px #888888;
+  border-radius: 5px;
 }
 
 #figure_medium {
@@ -163,6 +165,8 @@ p {
   border: 1px solid #777777;
   text-align: center; 
   margin: 20px auto 20px auto;
+  box-shadow: 0 0 10px #888888;
+  border-radius: 5px;
 }
 #figcaption {
   padding-top: 5px;
@@ -189,10 +193,12 @@ p {
 
 #profile_pic {
   display: table;
-  padding: 10px;
+  padding: 7px;
   border: 1px solid #777777;
   text-align: center; 
   margin: 20px auto 20px auto;
+  box-shadow: 0 0 10px #888888;
+  border-radius: 5px;
 }
 
 
