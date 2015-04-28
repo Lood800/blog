@@ -17,18 +17,5 @@ class ApplicationController < ActionController::Base
 	  	format.json { head :no_content }
   	end
   end
-
-
-  # respond_to do |format|
-  #   flash[:success] = 'User was successfully destroyed'
-  #   format.html { redirect_to users_url }
-  #   format.json { head :no_content }
-  # end
-
-  # respond_to do |format|
-  #   flash[:success] = 'Post was successfully destroyed'
-  #   format.html { redirect_to posts_url }
-  #   format.json { head :no_content }
-  # end
   
 end

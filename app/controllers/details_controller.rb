@@ -14,16 +14,16 @@ class DetailsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
+    # respond_to do |format|
       if @detail.update(detail_params)
         flash[:success] = 'Contact page was successfully updated'
-        format.html { redirect_to contact_path }
-        format.json { render :show, status: :ok, location: contact_path }
+        redirect_to contact_path
+        # format.json { render :show, status: :ok, location: contact_path }
       else
-        format.html { render :edit }
-        format.json { render json: @detail.errors, status: :unprocessable_entity }
+        render :edit
+        # format.json { render json: @detail.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
 	private
