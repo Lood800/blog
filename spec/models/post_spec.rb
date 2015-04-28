@@ -4,7 +4,7 @@ RSpec.describe Post, type: :model do
 
 	describe "factory" do
 		it "has a valid factory" do
-			FactoryGirl.create(:post).should be_valid
+			expect(FactoryGirl.create(:post)).to be_valid
 		end
 	end
 

@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <aside id="sidebar">
-	<h4>Recent Posts</h4>
+	<% if @posts_recent_ten.length > 0 %>
+		<h4>Recent Posts</h4>
+	<% end %>	
 		<ul class="list-unstyled">
 		<% @posts_recent_ten.each do |post| %>
 			<li>

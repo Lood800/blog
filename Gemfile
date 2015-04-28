@@ -40,5 +40,10 @@ group :test do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'launchy'
+  gem 'selenium-webdriver', '~> 2.45.0'
+  gem 'database_cleaner', '~> 1.0.1'
+  gem "faker", "~> 1.1.2"
+  gem 'simplecov', :require => false
+
 end
 

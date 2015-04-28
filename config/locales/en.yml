@@ -22,5 +22,5 @@ en:
   activerecord:
       errors:
         messages:
-          taken: "address is already subscribed to my mailing list!"
+          taken: "address is already in use!"
 

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
 	before :each do
-		@user ||= FactoryGirl.create :user
+		@user ||= create(:user)
 	end
 
 	describe "validations" do
@@ -30,12 +30,34 @@ RSpec.describe User, type: :model do
 	  end
 
 	  it "is not a valid user without a name" do
-	  	expect(FactoryGirl.build(:user, name: nil)).not_to be_valid
+	  	expect(build(:user, name: nil)).not_to be_valid
 	  end
 
 	  it "is not a valid user without an email" do
-	  	expect(FactoryGirl.build(:user, email: nil)).not_to be_valid
+	  	expect(build(:user, email: nil)).not_to be_valid
 	  end
+
+	  it "is not a valid user without an unique email" do
+	  	expect(build(:user)).not_to be_valid
+	  end
+
+	  it "is not valid if password and password_confirmation do not match" do
+	  	expect(build(:user, password: 'passwoord')).not_to be_valid
+	  end
+
+	  it "is not valid if name is longer than 50 characters" do
+	  	expect(build(:user, name: 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ')).not_to be_valid
+	  end
+
+	  it "is not valid if password is shorter than 6 characters" do
+	  	expect(build(:user, password: 'foobar', password_confirmation: 'foobar')).not_to be_valid
+	  end
+
+	  it "is not valid without a valid email address" do
+	  	expect(build(:user, email: 'koos@koos'))
+	  end
+
+
 	end
 
 	describe "name" do

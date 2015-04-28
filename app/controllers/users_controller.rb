@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:show, :index, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :show, :index, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_user
 
   def index
@@ -16,10 +16,11 @@ class UsersController < ApplicationController
 
  def create
     @user = User.new(user_params)
+    @user.name = @user.name.titleize
     if @user.save
       log_in @user
       flash[:success] = 'User was successfully created'
-      redirect_to root_path
+      redirect_to users_path
     else
       render 'new'
     end

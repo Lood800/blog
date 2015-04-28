@@ -4,4 +4,4 @@ FactoryGirl.define do
 	  bio.info                   "Professional bird watcher"
 	  bio.body               		 "Birds are awesome"
 	end
-end	
+end

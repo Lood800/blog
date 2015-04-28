@@ -5,8 +5,9 @@ feature "Visiting the 'Home' page" do
 		visit root_path
 	end
 
-	scenario "Contact button should work and redirect to contact page" do
+	scenario "Contact button works and redirect to contact page" do
+		detail = create(:detail)
   	click_link('Contact', match: :first)
-		expect(page).to have_content('Call: 082-875-6591')	
+		expect(page).to have_content('Lood800 082-875-6591')	
 	end
 end

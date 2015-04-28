@@ -3,7 +3,6 @@ class DetailsController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit]
 
 	def index
-		@details = Detail.all
 	end
 
 	def show

@@ -24,7 +24,7 @@ class SubscribersController < ApplicationController
       	SubscriberMailer.welcome(@subscriber).deliver_now
         flash[:success] = 'Successfully subscribed, you will be emailed as soon as there is a new post'
         format.html { redirect_to root_path }
-        format.json { render :show, status: :created, location: @subscriber }
+        format.json { render :root, status: :created, location: @subscriber }
       else
         format.html { render :new }
         format.json { render json: @subscriber.errors, status: :unprocessable_entity }
@@ -63,11 +63,11 @@ class SubscribersController < ApplicationController
   def destroy_message
     if @subscriber.nil?
       flash[:danger] = "Subscriber has already been unsubscribed"
-      redirect_to root_path
+      redirect_to subscribers_path
     else
       @subscriber.destroy
       flash[:success] = 'Subscriber has been successfully unsubscribed'
-      redirect_to root_path
+      redirect_to subscribers_path
     end
   end
 
