@@ -49,11 +49,9 @@
 
   def destroy
     @post.destroy
-    respond_to do |format|
-      flash[:success] = 'Post was successfully destroyed'
-      format.html { redirect_to posts_url }
-      format.json { head :no_content }
-    end
+    post = "Post"
+    posts = posts_path
+    respond_to_format(post, posts)
   end
 
   private

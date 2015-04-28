@@ -48,11 +48,9 @@ class UsersController < ApplicationController
       flash[:danger] = "You can not delete the last user"
     else
       @user.destroy
-      respond_to do |format|
-        flash[:success] = 'User was successfully destroyed'
-        format.html { redirect_to users_url }
-        format.json { head :no_content }
-      end
+      user = "User"
+      users = users_path
+      respond_to_format(user, users)
     end
   end
 
