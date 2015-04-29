@@ -10,27 +10,6 @@
 Post.delete_all
 
 
-lbr_images_1 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/LBR/lbr1.jpg").open,
-												 caption: 'Frikkie looking aroung')
-lbr_images_2 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/LBR/lbr2.jpg").open,
-												 caption: 'Frikkie and Kolle')
-lbr_images_3 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/LBR/lbr3.jpg").open,
-												 caption: 'Frikkie flying')
-lbr_images_4 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/LBR/lbr4.jpg").open,
-												 caption: "Frikkie's portrait")
-lbr_images_5 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/LBR/lbr5.jpg").open,
-												 caption: 'Look at Frikkie')
-
-
-Post.create!( heading: 'Lilac Breasted Roller',
-    				  sub_heading: 'Kruger National Park',
-    					body: 'The lilac-breasted roller (Coracias caudatus) is a member of the roller family of birds. It is widely distributed in sub-Saharan Africa and the southern Arabian Peninsula, preferring open woodland and savanna; it is largely absent from treeless places. Usually found alone or in pairs, it perches conspicuously at the tops of trees, poles or other high vantage points from where it can spot insects, lizards, scorpions, snails, small birds and rodents moving about at ground level.[2] Nesting takes place in a natural hole in a tree where a clutch of 2–4 eggs is laid, and incubated by both parents, who are extremely aggressive in defence of their nest, taking on raptors and other birds. During the breeding season the male will rise to great heights, descending in swoops and dives, while uttering harsh, discordant cries.
-    								The sexes are alike in coloration. Juveniles do not have the long tail feathers that adults do.
-    								This species is the national bird of Botswana and Kenya.',
-							images: [lbr_images_1, lbr_images_2, lbr_images_3, lbr_images_4, lbr_images_5])
-
-
-
 
 afe_images_1 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/AFE/afe1.jpg").open,
 												 caption: 'Koos looking aroung')
@@ -287,6 +266,27 @@ Post.create!( heading: 'Yellow Billed Kite',
 
 
 
+lbr_images_1 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/LBR/lbr1.jpg").open,
+                                                 caption: 'Frikkie looking aroung')
+lbr_images_2 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/LBR/lbr2.jpg").open,
+                                                 caption: 'Frikkie and Kolle')
+lbr_images_3 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/LBR/lbr3.jpg").open,
+                                                 caption: 'Frikkie flying')
+lbr_images_4 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/LBR/lbr4.jpg").open,
+                                                 caption: "Frikkie's portrait")
+lbr_images_5 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/LBR/lbr5.jpg").open,
+                                                 caption: 'Look at Frikkie')
+
+
+Post.create!( heading: 'Lilac Breasted Roller',
+                      sub_heading: 'Kruger National Park',
+                        body: 'The lilac-breasted roller (Coracias caudatus) is a member of the roller family of birds. It is widely distributed in sub-Saharan Africa and the southern Arabian Peninsula, preferring open woodland and savanna; it is largely absent from treeless places. Usually found alone or in pairs, it perches conspicuously at the tops of trees, poles or other high vantage points from where it can spot insects, lizards, scorpions, snails, small birds and rodents moving about at ground level.[2] Nesting takes place in a natural hole in a tree where a clutch of 2–4 eggs is laid, and incubated by both parents, who are extremely aggressive in defence of their nest, taking on raptors and other birds. During the breeding season the male will rise to great heights, descending in swoops and dives, while uttering harsh, discordant cries.
+                                    The sexes are alike in coloration. Juveniles do not have the long tail feathers that adults do.
+                                    This species is the national bird of Botswana and Kenya.',
+                            images: [lbr_images_1, lbr_images_2, lbr_images_3, lbr_images_4, lbr_images_5])
+
+
+
 
 
 
@@ -300,6 +300,20 @@ asb_images_4 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/
 												 caption: 'Dinner already?')
 asb_images_5 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/asb/asb5.jpg").open,
 												 caption: 'Beauty in flight!')
+asb_images_6 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/asb/asb6.jpg").open,
+                                                 caption: 'Chill!')
+asb_images_7 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/asb/asb7.jpg").open,
+                                                 caption: 'Portrait')
+asb_images_8 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/asb/asb8.jpg").open,
+                                                 caption: 'Storming')
+asb_images_9 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/asb/asb9.jpg").open,
+                                                 caption: 'FEEEEEEET')
+asb_images_10 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/asb/asb10.jpg").open,
+                                                 caption: 'Scratching')
+asb_images_11 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/asb/asb11.jpg").open,
+                                                 caption: 'Juvenile')
+asb_images_12 = Image.new( photo: Rails.root.join("/Users/Lood800/desktop/images/birds/asb/asb12.jpg").open,
+                                                 caption: 'Grazing')
 
 
 Post.create!( heading: 'African Spoonbill',
@@ -308,7 +322,7 @@ Post.create!( heading: 'African Spoonbill',
     								It lives in marshy wetlands with some open shallow water and nests in colonies in trees or reedbeds. They usually don't share colonies with storks or herons. The African spoonbill feeds in shallow water, and fishes for various fish,[2] molluscs,[2] amphibians, crustaceans,[2] insects[2] and larvae.[2] The animal uses its open bill to catch foods by swinging it from side-to-side in the water, which catches foods in its mouth.[2] Long legs and thin, pointed toes enable it to walk easily through varying depths of water
     								The African spoonbill is almost unmistakable through most of its range. The breeding bird is all white except for its red legs and face and long grey spatulate bill. It has no crest, unlike the common spoonbill. Immature birds lack the red face and have a yellow bill. Unlike herons, spoonbills fly with their necks outstretched.
     								The African spoonbill begins breeding in the winter, which lasts until spring.[2] The spoonbill's nest, generally located in trees above water, is built from sticks and reeds and lined with leaves.[3] Three to five eggs are laid by the female birds, usually during the months of April or May.[2] The eggs are incubated by both parents for up to 29 days, and upon hatching the young birds are cared for by both parents for around 20 to 30 days.[2] The birds are ready to leave the nest soon afterward, and begin flying after another four weeks",
-    					images: [asb_images_1, asb_images_2, asb_images_3, asb_images_4, asb_images_5])
+    					images: [asb_images_1, asb_images_2, asb_images_3, asb_images_4, asb_images_5, asb_images_6, asb_images_7, asb_images_8, asb_images_9, asb_images_10, asb_images_11, asb_images_12])
 
 
 
